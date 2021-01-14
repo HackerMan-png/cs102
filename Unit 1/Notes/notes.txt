@@ -1,0 +1,130 @@
+Object Oriented Programming - OOP
+	An extemely common question that you will get during a job interview is "explain object oriented programming in your own words"
+
+	"Object oriented programming is a way of coding that allows you to create object with properties that are cloned when you reference that object, so you don't have to type something over and over..."
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OOP Vocab
+	Encapsulation
+		The ability to store information inside of an object so that it is only visible to the object
+	
+	Abstraction
+		Hiding the internal mechanisms behind a simple interface.
+	
+	Inheritance
+		Basing one object off another in order to retain similar implementation or properties
+
+	Polymorphism
+		The ability to perform the same action in different ways (i.e. run can be 2 legs or 4 legs)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What is an Object
+	An object (sometimes referred to as a class in other languages) is a data type just like string and numbers but unlike those "primitive" data types they are used to store many values at once using keyed collections and more complex entries.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to think about an object
+	An object is like a wallet that stores all kinds of things. You may have a card, that card is an ID or a debit card. You can have money which may be a single or a five. You can even use it to store things normally would't go in a wallet, like lint or paper clips.
+
+	In this example the wallet object is holding a card key with an ID value. Etc...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How to create An Object
+	An empty object is created using either an object constructor or an object literal
+
+	let wallet = new object();
+		This is an object constructor
+	
+	let wallet = {};
+		This is an object literal
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Key:Value aka Properties
+
+	In order to save values in an object you need to assign them a key, king of like a name tag that you can refer to later to "get" the value back out. It is written like 
+		card: "Debit"
+		cash: 42
+	Every key:value is seperated with a "," and the key and value pair is seperated with a colon.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Assigning Values To Your Object
+	Now we combine those two things and we end up with an object that is holding keys and values
+		let wallet = {
+			card: "Debit",
+			cash: 42
+		};
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Active Engagement
+	let student = {
+		name: "Jaxson Hunt",
+		id: 1098800,
+		hairColor: "black",
+		favoriteSnack: "pizza",
+		class: "coding",
+		sessionTime: "1:00"
+	}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Reading Your Properties
+	In the wallet object that we made we can add, remove and read any of the properties at any time.
+	The values are called by using the properties and keys that we defined.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding New Properties
+	Just because a key was not added at creation does not mean that we can't add it later.
+
+	We can also add new properties similar to how we took the value out.
+
+	wallet.ID = "School ID"
+	console.log(wallet.ID)
+	//School ID
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Removing Properties
+	Sometimes a card will expire, or be lost, or you will spend all your cash.
+	When this happens the property will need to be removed from the object.
+		delete wallet.cash;
+	Rather than making the value 0 we can remove it entirely, sometimes this is preferable.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Multiword Properties
+	You may also use multi word properties
+	The benefit is being able to express more complicated keys or to have a value that works easier with something a person would read.
+	This is very useful when creating databases or tables.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Square Brackets
+	We can't add something like
+		wallet.is poor = true
+	This will break the code as well
+		wallter."is poor" = true
+	When creating multi word properties we need use square brackets
+		wallet["is poor"] = true
+	console.log(wallet["is poor"])
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding Through Prompts
+	Most likely you will not want to fill out an entire object on your own, the code can do that for you
+		let wallet = {}
+		let money = prompt("how much do you want to take out", "20");
+		wallet["cash"] = money
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Functions to Initialize/Clone
+	Many times when you want to create a new object you will pass it through a function
+	This is best done by using key:vlaue pairs with the same name and then passing the values through the parameters.
+
+	function createStudent(name, id) {
+		return {
+			name: name
+			id: id
+		}
+	}
+
+	let jimmy = createStudent("Jimmy W.", 123456);
+
+	console.log(jimmy.name)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The "in" Operator
+	You should always check to make sure that a key is in an object before calling it.
+	In order to do this we can use the in operator to check the key.
+		"key" in object; // true or false
+	For example:
+		"cash" in wallet; // false, there if there is no cash in the wallet.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The "for..in" loop
+	If you have an object that is filled with several properties that you would like to extract you may use a for in loop
+		for(let key in wallet){
+			console.log(key); //card, cash
+			console.log(wallet[key]); //"debit", 42
+		}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Object Referencing
+	When you have a avariable
