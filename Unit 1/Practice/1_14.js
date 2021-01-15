@@ -69,20 +69,20 @@ class User{
 	}
 	set setUserName(username){
 		if(username.length <= 4){
-			console.log("username can't be less than 5 character")
+			console.log("username can't be less than 5 characters")
 		}else{
 			this.userName = username
 		}
 	}
 	set setPassword(userPassword){
-		passwordArr = userPassword.split("")
+		let passwordArr = userPassword.split("")
 		let number = false
-		for(i of passwordArr){
-			if(i.toLowerCase() != i.toUpperCase()){
+		for(let i of passwordArr){
+			if(i.toLowerCase() == i.toUpperCase()){
 				number = true
 			}
 		}
-		if(userPassword.length >= 5 && userPassword.toLowerCase() != userPassword.toUpperCase()){
+		if(userPassword.length >= 5 && number == true){
 			this.password = userPassword
 		}else{
 			console.log("Password can't be less than 6 characters and you need atleast one number.")
@@ -99,7 +99,9 @@ class User{
 
 let test = new User()
 
-test.userName = "Ja"
-test.password = "pa"
+test.setUserName = "Jan"
+test.setPassword = "pasdd"
+
+test.login("Jaxson", "passs1")
 
 
