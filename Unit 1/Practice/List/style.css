@@ -1,0 +1,27 @@
+
+html{
+    background-color: rgb(26, 26, 26);
+    color: white;
+    height: 100%;
+}
+
+textarea{
+    resize: none;
+    height: 1.1em;
+    width: 250px;
+    overflow: hidden;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+span{
+    border-right: white 2px solid;
+    padding-right: 10px;
+    margin-right: 20px;
+}

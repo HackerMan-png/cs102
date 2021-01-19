@@ -99,9 +99,9 @@ class User{
 
 let test = new User()
 
-test.setUserName = "Jan"
-test.setPassword = "pasdd"
+test.setUserName = "Jaxson"
+test.setPassword = "password1"
 
-test.login("Jaxson", "passs1")
+test.login("Jaxson", "password1")
 
 
