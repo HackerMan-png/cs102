@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cash Money</title>
+	<meta name="author" content="Jaxson Hunt">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta property="og:image" content="">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="" type="image/x-icon">
+</head>
+<body>
+	<div class="row">
+        <label for="firstName">First Name <span class="required">*</span></label>
+        <input name="firstName" id="firstName" placeholder="First Name"></input>
+        <label for="lastName">Last Name <span class="required">*</span></label>
+        <input name="lastName" id="lastName" placeholder="Last Name"></input>
+        <label for="DOB">Date of Birth <span class="required">*</span></label>
+        <input name="DOB" type="date" id="DOB" placeholder="Date of birth (MM/DD/YYYY)"></input>
+        <label for="leavingCity">Leaving City <span class="required">*</span></label>
+        <input name="leavingCity" id="leavingCity" placeholder="City you're leaving from"></input>
+        <label for="arrivingCity">Arriving City <span class="required">*</span></label>
+        <input name="arrivingCity" id="arrivingCity" placeholder="City you're arriving at"></input>
+        <label for="leavingDate">Leaving Date <span class="required">*</span></label>
+        <input name="leavingDate type="date" id="leavingDate" placeholder="Date you're leaving on"></input>
+        <label for="returnDate">Return Date <span class="required">*</span></label>
+        <input name="returnDate" type="date" id="returnDate" placeholder="Date you're returning"></input>
+        <label for="bags">Number of bags <span class="required">*</span></label>
+        <input name="bags" type="number" id="bags" placeholder="How many bags?"></input>
+        <ul id="mealOption">
+            <legend>Meal Options <span class="required">*</span></legend>
+            <li>
+                <input type="radio" name="meal" id="chicken" value="chicken">
+                <label for="chicken">Chicken</label>
+            </li>
+            <li>
+                <input type="radio" name="meal" id="fish" value="fish">
+                <label for="fish">Fish</label>
+            </li>
+            <li>
+                <input type="radio" name="meal" id="vegitarian" value="vegitarian">
+                <label for="vegitarian">Vegitarian</label>
+            </li>
+        </ul>
+        <ul id="extras">
+            <legend>Extras</legend>
+            <li>
+                <input type="checkbox" id="legroom" value="legroom" name="legroom">
+                <label for="legroom">Legroom</label>
+            </li>
+            <li>
+                <input type="checkbox" id="windowSeat" value="windowSeat" name="windowSeat">
+                <label for="windowSeat">Window Seat</label>
+            </li>
+            <li>
+                <input type="checkbox" id="headphones" value="headphones" name="headphones">
+                <label for="headphones">Headphones</label>
+            </li>
+        </ul>
+        <button onclick="addToList()">Add</button>
+    </div>
+
+    <div class="row" id="printSpace">
+
+    </div>
+	<script src="script.js"></script>
+</body>
+</html>

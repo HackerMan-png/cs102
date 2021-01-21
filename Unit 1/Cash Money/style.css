@@ -1,0 +1,26 @@
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    gap: 1.1rem;
+    padding-bottom: 10px;
+    
+    background-color: skyblue;
+}
+
+.required{
+    color: red;
+}
+
+.options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.1rem;
+    width: 50%;
+    background-color: skyblue;
+    height: 100vh;
+}
