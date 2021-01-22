@@ -18,47 +18,56 @@
 	<div class="row">
         <label for="firstName">First Name <span class="required">*</span></label>
         <input name="firstName" id="firstName" placeholder="First Name"></input>
+
         <label for="lastName">Last Name <span class="required">*</span></label>
         <input name="lastName" id="lastName" placeholder="Last Name"></input>
+
         <label for="DOB">Date of Birth <span class="required">*</span></label>
         <input name="DOB" type="date" id="DOB" placeholder="Date of birth (MM/DD/YYYY)"></input>
+
         <label for="leavingCity">Leaving City <span class="required">*</span></label>
         <input name="leavingCity" id="leavingCity" placeholder="City you're leaving from"></input>
+
         <label for="arrivingCity">Arriving City <span class="required">*</span></label>
         <input name="arrivingCity" id="arrivingCity" placeholder="City you're arriving at"></input>
+
         <label for="leavingDate">Leaving Date <span class="required">*</span></label>
-        <input name="leavingDate type="date" id="leavingDate" placeholder="Date you're leaving on"></input>
+        <input name="leavingDate" type="date" id="leavingDate" placeholder="Date you're leaving on"></input>
+
         <label for="returnDate">Return Date <span class="required">*</span></label>
         <input name="returnDate" type="date" id="returnDate" placeholder="Date you're returning"></input>
-        <label for="bags">Number of bags <span class="required">*</span></label>
+
+        <label for="bags">Number of bags ($20 per bag) <span class="required">*</span></label>
         <input name="bags" type="number" id="bags" placeholder="How many bags?"></input>
+
         <ul id="mealOption">
             <legend>Meal Options <span class="required">*</span></legend>
             <li>
-                <input type="radio" name="meal" id="chicken" value="chicken">
+                <input type="radio" name="meal" id="chicken" value="Chicken">
                 <label for="chicken">Chicken</label>
             </li>
             <li>
-                <input type="radio" name="meal" id="fish" value="fish">
+                <input type="radio" name="meal" id="fish" value="Fish">
                 <label for="fish">Fish</label>
             </li>
             <li>
-                <input type="radio" name="meal" id="vegitarian" value="vegitarian">
+                <input type="radio" name="meal" id="vegitarian" value="Vegitarian">
                 <label for="vegitarian">Vegitarian</label>
             </li>
         </ul>
+
         <ul id="extras">
-            <legend>Extras</legend>
+            <legend>Extras ($10 per option)</legend>
             <li>
-                <input type="checkbox" id="legroom" value="legroom" name="legroom">
+                <input type="checkbox" id="legroom" value="Legroom" name="extras">
                 <label for="legroom">Legroom</label>
             </li>
             <li>
-                <input type="checkbox" id="windowSeat" value="windowSeat" name="windowSeat">
+                <input type="checkbox" id="windowSeat" value="Window seat" name="extras">
                 <label for="windowSeat">Window Seat</label>
             </li>
             <li>
-                <input type="checkbox" id="headphones" value="headphones" name="headphones">
+                <input type="checkbox" id="headphones" value="Headphones" name="extras">
                 <label for="headphones">Headphones</label>
             </li>
         </ul>

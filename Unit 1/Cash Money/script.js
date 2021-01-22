@@ -1,5 +1,5 @@
 class User {
-    constructor(firstName, lastName, DOB, leavingCity, arrivingCity, leavingDate, returnDate, bags, mealOption, extras, id) {
+    constructor(firstName, lastName, DOB, leavingCity, arrivingCity, leavingDate, returnDate, bags, meal, extras, id) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.DOB = DOB
@@ -9,7 +9,7 @@ class User {
         this.leavingDate = leavingDate
         this.returnDate = returnDate
         this.bags = bags
-        this.mealOption = mealOption
+        this.meal = meal
         this.extras = extras
         this.id = id;
     }
@@ -30,6 +30,9 @@ function addToList() {
     let returnDate = document.getElementById("returnDate").value;
     let bags = document.getElementById("bags").value;
     let mealOptions = document.getElementsByName("meal")
+    let extrasLength = document.getElementsByName("extras")
+    let extraString = ""
+
 
 
 
@@ -38,12 +41,21 @@ function addToList() {
             var meal = mealOptions[i].value
         }
     }
-    let extras = document.getElementById("extras").value;
-    console.log(bags);
-    console.log(meal);
+    for (let i = 0, length = extrasLength.length; i < length; i++) {
+        if (extrasLength[i].checked) {
+            if (extraString != "") {
+                extraString += `, ${extrasLength[i].value}`
+            } else {
+                extraString += `${extrasLength[i].value}`
+            }
+
+        }
+        var extras = extraString
+    }
+
 
     if (firstName != "" && lastName != "" && DOB != "" && leavingCity != "" && arrivingCity != "" && leavingDate != "" && returnDate != "" && bags != "" && meal != "") {
-        let user = new User(firstName, lastName, DOB, leavingCity, arrivingCity, leavingDate, returnDate, bags, mealOption, extras, idCount);
+        let user = new User(firstName, lastName, DOB, leavingCity, arrivingCity, leavingDate, returnDate, bags, meal, extras, idCount);
         idCount++
         userList.push(user)
         document.getElementById("firstName").value = "";
@@ -54,10 +66,19 @@ function addToList() {
         document.getElementById("leavingDate").value = "";
         document.getElementById("returnDate").value = "";
         document.getElementById("bags").value = "";
-        document.getElementById("mealOption").value = undefined;
-        document.getElementById("extras").value = undefined;
+        for (let i = 0, length = mealOptions.length; i < length; i++) {
+            mealOptions[i].checked = false
+        }
+
+        for (let i = 0, length = extrasLength.length; i < length; i++) {
+            extrasLength[i].checked = false
+        }
+        console.log(user)
     }
 }
+
+
+
 
 function print() {
     let space = document.getElementById("printSpace")
