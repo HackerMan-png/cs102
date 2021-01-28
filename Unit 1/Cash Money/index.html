@@ -1,82 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Cash Money</title>
-	<meta name="author" content="Jaxson Hunt">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Cash Money</title>
+    <meta name="author" content="Jaxson Hunt">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta property="og:image" content="">
-	<meta property="og:title" content="">
-	<meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
 
-	<link rel="stylesheet" href="style.css">
-	<link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="" type="image/x-icon">
 </head>
+
 <body>
-	<div class="row">
-        <label for="firstName">First Name <span class="required">*</span></label>
-        <input name="firstName" id="firstName" placeholder="First Name"></input>
+    <div class="first-col">
+        <h3>PASSENGER TRAVEL FORM</h3>
+        <h4>( * is required)</h4>
+        <label for="firstName">First Name*</label>
+        <input type="text" value="Kyle" id="firstName" placeholder="First Name">
+        <label for="lastName">Last Name*</label>
+        <input type="text" value="Peck" id="lastName" placeholder="Last Name">
+        <div class="col">
+            <label for="DoB">Date of Birth*</label>
+            <input type="date" value="1990-10-06" id="DoB" placeholder="MM/DD/YYYY" class="space">
+        </div>
+        <label for="departing">Departure City*</label>
+        <input type="text" value="Phoenix, AZ" id="departing" placeholder="City, State (Phoenix, AZ)">
+        <label for="arriving">Arrival City*</label>
+        <input type="text" value="Atlanta, GA" id="arriving" placeholder="City, State (Atlanta, GA)">
+        <div class="col">
+            <label for="leaveDate">Date leaving*</label>
+            <input type="date" value="2021-01-27" name="leaveDate" id="leaveDate" placeholder="MM/DD/YYYY">
+        </div>
+        <div class="col space">
+            <label for="returnDate">Date Returning*</label>
+            <input type="date" value="2021-01-30" name="returnDate" id="returnDate" placeholder="MM/DD/YYYY">
+        </div>
+        <div class="col space">
+            <label for="bags" class="bags">How many bags?</label>
+            <input type="number" class="bags" name="bags" id="bags" placeholder="#" value="0">
+        </div>
+        <label for="meal" class="lessspace">What kind of meal would you like?</label>
+        <div class="col space">
+            <div class="meals">
+                <div>
+                    <label for="chick">Chicken</label>
+                    <input checked type="radio" name="meal" id="chick" value="Chicken">
+                </div>
+                <div>
+                    <label for="fish">Fish</label>
+                    <input type="radio" name="meal" id="fish" value="Fish">
+                </div>
+                <div>
+                    <label for="veg">Vegetarian</label>
+                    <input type="radio" name="meal" id="veg" value="Veggie">
+                </div>
+            </div>
+        </div>
+        <label for="extra" class="lessspace">Order your extras (only 10$ each!)</label>
+        <div class="col extras lessspace">
+            <label for="legroom">Extra Leg Room?</label>
+            <input checked type="checkbox" name="extra" id="legroom" value="Legroom">
+        </div>
+        <div class="col extras lessspace">
+            <label for="window">Window Seat?</label>
+            <input type="checkbox" name="extra" id="window" value="Window Seat">
+        </div>
+        <div class="col extras lessspace">
+            <label for="headphones">Head Phones?</label>
+            <input type="checkbox" name="extra" id="headphones" value="Headphones">
+        </div>
+        <div class="col extras space">
+            <label for="moreFood">Second Serving of Meal?</label>
+            <input checked type="checkbox" name="extra" id="moreFood" value="Extra Food">
+        </div>
 
-        <label for="lastName">Last Name <span class="required">*</span></label>
-        <input name="lastName" id="lastName" placeholder="Last Name"></input>
+        <button onclick="addToList()">Submit Passenger Info</button>
 
-        <label for="DOB">Date of Birth <span class="required">*</span></label>
-        <input name="DOB" type="date" id="DOB" placeholder="Date of birth (MM/DD/YYYY)"></input>
+    </div>
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-        <label for="leavingCity">Leaving City <span class="required">*</span></label>
-        <input name="leavingCity" id="leavingCity" placeholder="City you're leaving from"></input>
+    <div class="second-col">
+        <div class="col space">
+            <button id="print" onclick="search()">Search</button>
+            <input id="search" style="margin-left: 10px;" type="text" placeholder="first last">
+            <p style="margin-left: 10px;">Sort By:</p>
+            <select style="margin-left: 10px;" name="users" id="dropDown">
+                <option value="id">ID</option>
+                <option value="firstName">First Name</option>
+                <option value="lastName">Last Name</option>
+            </select>
+            <button onclick="print()" id="print">Print All Names</button>
+        </div>
+        <div class="col">
+            <label for="firstName">First Name</label>
+            <input type="text" id="outfirstName" placeholder="First Name">
+            <label for="lastName" style="margin-left: 10px;">Last Name</label>
+            <input type="text" id="outlastName" placeholder="Last Name">
+        </div>
+        <div class="col">
+            <label for="DoB">Date of Birth</label>
+            <input type="date" id="outDoB" placeholder="MM/DD/YYYY">
+            <label for="bags" class="bags" style="margin-left: 10px">Bags</label>
+            <input type="number" class="bags" name="bags" id="outbags" placeholder="#">
+        </div>
+        <div class="row">
+            <label for="departing">Departing*</label>
+            <input style="margin-left: 10px" type="text" id="outdeparting" placeholder="City, State (Phoenix, AZ)">
+        </div>
+        <div class="row">
+            <label for="arriving">Arrivaling*</label>
+            <input style="margin-left: 10px" type="text" id="outarriving" placeholder="City, State (Atlanta, GA)">
+        </div>
+        <div class="row">
+            <label for="leaveDate">Date leaving</label>
+            <input type="date" name="leaveDate" id="outleaveDate" placeholder="MM/DD/YYYY">
+            <label for="returnDate" style="margin-left: 10px">Date Returning</label>
+            <input type="date" name="returnDate" id="outreturnDate" placeholder="MM/DD/YYYY">
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <p style="margin-right: 10px; width: 120px;">Trip Duration:</p>
+            <p style="width:75px;" id="outdurration" type="text">
+            <p>Meal:</p>
+            <input style="width: 150px;" id="outmeal" type="text">
+            <p style="margin-left: 20px; margin-right: 10px;">Age:</p>
+            <p style="width: 50px;" id="outage" type="text">
+        </div>
+        <div class="row">
+            <p>Extras:</p>
+            <input id="outextras" type="text">
+            <p style="margin-left: 20px;">Cost:</p>
+            <p id="outcost" style="margin-left: 10px;">$300</p>
+        </div>
 
-        <label for="arrivingCity">Arriving City <span class="required">*</span></label>
-        <input name="arrivingCity" id="arrivingCity" placeholder="City you're arriving at"></input>
+        <button onclick="updateList()">Submit Changes</button>
+        <div id="success"></div>
+        <div id="names">
 
-        <label for="leavingDate">Leaving Date <span class="required">*</span></label>
-        <input name="leavingDate" type="date" id="leavingDate" placeholder="Date you're leaving on"></input>
+        </div>
 
-        <label for="returnDate">Return Date <span class="required">*</span></label>
-        <input name="returnDate" type="date" id="returnDate" placeholder="Date you're returning"></input>
-
-        <label for="bags">Number of bags ($20 per bag) <span class="required">*</span></label>
-        <input name="bags" type="number" id="bags" placeholder="How many bags?"></input>
-
-        <ul id="mealOption">
-            <legend>Meal Options <span class="required">*</span></legend>
-            <li>
-                <input type="radio" name="meal" id="chicken" value="Chicken">
-                <label for="chicken">Chicken</label>
-            </li>
-            <li>
-                <input type="radio" name="meal" id="fish" value="Fish">
-                <label for="fish">Fish</label>
-            </li>
-            <li>
-                <input type="radio" name="meal" id="vegitarian" value="Vegitarian">
-                <label for="vegitarian">Vegitarian</label>
-            </li>
-        </ul>
-
-        <ul id="extras">
-            <legend>Extras ($10 per option)</legend>
-            <li>
-                <input type="checkbox" id="legroom" value="Legroom" name="extras">
-                <label for="legroom">Legroom</label>
-            </li>
-            <li>
-                <input type="checkbox" id="windowSeat" value="Window seat" name="extras">
-                <label for="windowSeat">Window Seat</label>
-            </li>
-            <li>
-                <input type="checkbox" id="headphones" value="Headphones" name="extras">
-                <label for="headphones">Headphones</label>
-            </li>
-        </ul>
-        <button onclick="addToList()">Add</button>
     </div>
 
-    <div class="row" id="printSpace">
-
-    </div>
-	<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
+
 </html>
