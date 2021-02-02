@@ -209,3 +209,102 @@ Auto Correcting
 Date.now()
 	This returns the current time on the device you are using.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Events
+	An event is something happening on the page, normally this is caused by the user interacting with the page.
+	Every DOM node (elements/items) oon the page generaes all of the signals, normally they are just set to do nothing.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Event Listeners
+	In order to react to these signals we need to set up event listeners that will wait on the page until the event triggers it
+	We have been using one of them for a while now called onclick
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Common Mouse Events
+	click
+		When the mouse is pressed and released on an element
+	contextmenu
+		When the mouse right-clicks on an element
+	mouseover/mouseout
+		When the mouse cursor moves over or leave an element
+	mousedown / mouseup
+		When the mouse button is pressed/ released over an element
+	mousemove
+		When the mouse is moved.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Common Keyboard Events
+	keydown
+		When the keyboard is pressed
+	keyup
+		When the keyboard key is released
+	Submit
+		When you hit the submit button in the form
+	Focus
+		When the user selects an element on the form e.g. an input box
+	DOMContentLoaded
+		When the HTML is loaded and the DOM is fully built
+	Transitionend
+		When a CSS animation finishes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Event Handlers
+	Once a listener activates from the user interacting you have to tell it how to act.
+	A handler will tell the event listener what to do once it notices that the event has happened.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using "this"
+	You ca use this and refer to the element that even is tied to, for example
+
+	<button onclick="alter(this.innerHTML)">Click me</button>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding and removing Event Listeners
+	elemID.addEventListener (event, handler, [options])
+	elemID.removeEventListener (event, handler, [options])
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+More Shorthand
+	Since JS knows that the eventListener needs to be added to an element you can use horthand and jusr say the id of the element without doing the jquery
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Event Object
+	When an event happens on your page the browser creates an event object that stores information about the event
+	For example: What kind of event, what it clicked on, and relative position.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Event Object Properties
+	There are a lot of properties that you can use from the Event Object, here are a few
+	event.type
+		Will tell you what kind of action you are taking, right click, left click, etc.
+	event.currentTarget
+		what you are clicking on
+	event.clientX / event.clientY
+		Where you are clicking in px
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Giving Multiple Events
+	You can make a switch case where you can assign what should happen with each event
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Affecting the Styles
+	Using style.property on the current target element will allow you to change the property to whatever you want.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Adding Events In a "for" Loop
+	If you want to create a large groups of divs that all have event listeners you can add them with a loop, and save yourself some work.
+	There are a few new bits of code thatyou will need to know
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating Elements
+	You can use the document object to make new elements, just not read the elements on it.
+	Example:
+		document.createElement("div")
+
+		document.createElement("li)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Appending Child
+	Once you have created an updated the element that you want to add to the html you can then take that element and add it to the HTML by appending child of the parent element.
+	Example:
+		parent.appendChild(child)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create, Add, Append, Repeat
+	for (let i = 0; i < 9; i++){
+		let square = document.creatElement("div");
+		square.addEventListener("mouseover", testing);
+		main.appendChild(square)
+	}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Transitions
+	There are a lot of different CSS animations that you can put on your work but the first one (and easiest one) that we are going to use is transition
+	Every time a property changes on your CSS the transition will show the change from one to the next.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Custom Cursors
+	There are a few ways to make a custom cursor on the screen, we are going to learn the simple way for now.
+	The cursor property is a way that we can change what the cursor looks like

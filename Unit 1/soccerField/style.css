@@ -1,0 +1,25 @@
+#field{
+height: 90vh;
+width: 90vw;
+margin: auto;
+
+border: white 10px solid;
+position: relative;
+overflow: hidden;
+background-color: rgb(95, 190, 0);
+
+cursor: url('Cursor.png'), pointer;
+}
+html{
+    background-color: rgb(95, 190, 0);
+}
+#ball{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 40px;
+    height: 40px;
+
+    transition: all .5s;
+}
