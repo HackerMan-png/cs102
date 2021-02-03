@@ -9,7 +9,10 @@
 body{
     background-color: rgb(29, 29, 29);
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
+    min-height: 100vh;
 }
 
 .nixonButton{
@@ -19,8 +22,6 @@ body{
     color: white;
     font-size: 10rem;
     text-align: center;
-    margin-right: 2vw;
-    margin-top: 25vh;
     transition: all 0.5s;
 }
 
@@ -31,7 +32,7 @@ body{
     color: white;
     font-size: 9rem;
     text-align: center;
-    margin-top: 25vh;
     transition: all 0.5s;
+    cursor: url() 100 100, default;
 }
 
