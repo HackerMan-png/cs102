@@ -1,0 +1,14 @@
+nav{
+	ul{
+		display: flex;
+		flex-direction: row;
+		width: 100vw;
+		list-style: none;
+		background-color: rgb(27, 27, 27);
+		color: rgb(240, 240, 240);
+		height: 3rem;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	margin-bottom: 10px;
+}
