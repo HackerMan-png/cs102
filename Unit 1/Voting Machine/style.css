@@ -13,6 +13,9 @@ body{
     align-items: center;
     flex-direction: row;
     min-height: 100vh;
+    width: 100vw;
+    flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .nixonButton{
@@ -33,6 +36,31 @@ body{
     font-size: 9rem;
     text-align: center;
     transition: all 0.5s;
-    cursor: url() 100 100, default;
+    cursor: url(CursorTest.png) 100 100, default;
+
 }
 
+.fillButton{
+    height: 10vh;
+    width: 20vw;
+}
+
+#congratulations{
+    display: none;
+}
+
+#congratulationss{
+    display: none;
+}
+
+#wrapper{
+    background-color: rgb(29, 29, 29);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    min-height: 100vh;
+    width: 100vw;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
