@@ -69,5 +69,12 @@ function resetLap(){
         }else{
             lap = false
         }
-    }
+    }else{
+			clearInterval(interval)
+			time = 0
+			seconds = 0
+			minutes = 0
+			hours = 0
+			timer.textContent = `00:00:00:00`
+		}
 }
