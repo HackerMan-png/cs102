@@ -1,0 +1,187 @@
+body {
+  font-family: sans-serif;
+  background-color: #040404;
+  color: #fff;
+  position: relative;
+  background: transparent;
+
+  &::before {
+    content: "";
+    position: fixed;
+    background: #040404 top right no-repeat; // can place an image if you want
+    background-size: cover;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: -1;
+  }
+}
+
+a {
+  color: greenyellow;
+  text-decoration: none;
+
+  &:hover {
+    color: green;
+    text-decoration: none;
+  }
+}
+
+#navbar{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#landing {
+  width: 100%;
+  height: 100vh;
+  background: url(https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
+    top right;
+  background-size: cover;
+  position: relative;
+
+  &::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .landing-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 15px;
+
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 64px;
+      font-family: fantasy; //Update later
+      color: #fff;
+    }
+
+    h2 {
+      color: #eee;
+      margin-bottom: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .btn-scroll {
+      transition: 0.5s;
+      color: grey;
+      animation: up-down 1s ease-in-out infinite alternate-reverse both;
+
+      i {
+        font-size: 48px;
+      }
+
+      &:hover {
+        color: #3A5338;
+      }
+    }
+  }
+}
+
+.skills {
+  .progress {
+    height: 60px;
+    display: block;
+    background: none;
+    border-radius: 0;
+
+    .skill {
+      padding: 10px 0;
+      margin: 0;
+      text-transform: uppercase;
+      display: block;
+      font-weight: 500;
+      font-family: sans-serif;
+      color: #fff;
+    }
+
+    .val {
+      float: right;
+      font-style: normal;
+    }
+  }
+
+  .progress-bar-wrap {
+    background: lightgrey;
+
+    .progress-bar {
+      height: 10px;
+      transition: 0.9s;
+      background-color: #3A5338;
+    }
+  }
+}
+
+.resume {
+  .resume-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .resume-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid #3A5338;
+    position: relative;
+    h4 {
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-family: sans-serif;
+      color: #435445;
+      margin-bottom: 10px;
+    }
+    h5 {
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 5px 15px;
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+      li {
+        padding-bottom: 0;
+      }
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50px;
+      left: -9px;
+      top: 0;
+      background: #3A5338;
+      border: 2px solid #203727;
+    }
+  }
+}
