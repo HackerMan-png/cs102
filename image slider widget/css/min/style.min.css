@@ -1,0 +1,2 @@
+*,*::after,*::before{padding:0;margin:0;-webkit-box-sizing:border-box;box-sizing:border-box}.background{-webkit-transition:all 1s;transition:all 1s}h1{text-align:center}#slider{width:720px;height:400px;overflow:hidden;margin:auto}#slider .slides{display:block;width:6000px;height:400px;margin:0;padding:0}#slider .slide{float:left;width:720px;height:400px;list-style-type:none}
+/*# sourceMappingURL=style.min.css.map */
