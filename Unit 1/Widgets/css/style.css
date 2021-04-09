@@ -79,7 +79,7 @@ a:hover {
 #landing .landing-container h1 {
   margin: 0 0 10px 0;
   font-size: 64px;
-  font-family: fantasy;
+  font-family: 'Times New Roman', Times, serif;
   color: #fff;
 }
 
@@ -89,14 +89,15 @@ a:hover {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 #landing .landing-container .btn-scroll {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   color: grey;
-  animation: up-down 1s ease-in-out infinite alternate-reverse both;
+  animation: up-down 0.5s ease-in-out infinite alternate-reverse both;
 }
 
 #landing .landing-container .btn-scroll i {
